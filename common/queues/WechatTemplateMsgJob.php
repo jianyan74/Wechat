@@ -1,6 +1,6 @@
 <?php
 
-namespace addons\RfWechat\common\queues;
+namespace addons\Wechat\common\queues;
 
 use Yii;
 use yii\base\BaseObject;
@@ -28,6 +28,6 @@ class WechatTemplateMsgJob extends BaseObject implements \yii\queue\JobInterface
      */
     public function execute($queue)
     {
-        Yii::$app->wechatServices->wechatTemplateMsg->realSend($this->data);
+        Yii::$app->wechatService->wechatTemplateMsg->realSend($this->data);
     }
 }

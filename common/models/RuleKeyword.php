@@ -1,9 +1,9 @@
 <?php
-namespace addons\RfWechat\common\models;
+namespace addons\Wechat\common\models;
 use common\behaviors\MerchantBehavior;
 
 /**
- * This is the model class for table "{{%wechat_rule_keyword}}".
+ * This is the model class for table "{{%addon_wechat_rule_keyword}}".
  *
  * @property string $id
  * @property string $rule_id 规则ID
@@ -37,7 +37,7 @@ class RuleKeyword extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return '{{%wechat_rule_keyword}}';
+        return '{{%addon_wechat_rule_keyword}}';
     }
 
     /**

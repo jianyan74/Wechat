@@ -10,7 +10,7 @@ class m190719_024050_wechat_mass_record extends Migration
         $this->execute('SET foreign_key_checks = 0');
         
         /* 创建表 */
-        $this->createTable('{{%wechat_mass_record}}', [
+        $this->createTable('{{%addon_wechat_mass_record}}', [
             'id' => "int(10) unsigned NOT NULL AUTO_INCREMENT",
             'merchant_id' => "int(10) unsigned NULL DEFAULT '0' COMMENT '商户id'",
             'msg_id' => "bigint(20) NULL DEFAULT '0' COMMENT '微信消息id'",
@@ -44,7 +44,7 @@ class m190719_024050_wechat_mass_record extends Migration
     {
         $this->execute('SET foreign_key_checks = 0');
         /* 删除表 */
-        $this->dropTable('{{%wechat_mass_record}}');
+        $this->dropTable('{{%addon_wechat_mass_record}}');
         $this->execute('SET foreign_key_checks = 1;');
     }
 }

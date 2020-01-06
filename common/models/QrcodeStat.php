@@ -1,10 +1,10 @@
 <?php
-namespace addons\RfWechat\common\models;
+namespace addons\Wechat\common\models;
 
 use common\behaviors\MerchantBehavior;
 
 /**
- * This is the model class for table "{{%wechat_qrcode_stat}}".
+ * This is the model class for table "{{%addon_wechat_qrcode_stat}}".
  *
  * @property string $id
  * @property string $qrcord_id 二维码id
@@ -37,7 +37,7 @@ class QrcodeStat extends \common\models\base\BaseModel
      */
     public static function tableName()
     {
-        return '{{%wechat_qrcode_stat}}';
+        return '{{%addon_wechat_qrcode_stat}}';
     }
 
     /**

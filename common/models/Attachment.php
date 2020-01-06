@@ -1,11 +1,11 @@
 <?php
 
-namespace addons\RfWechat\common\models;
+namespace addons\Wechat\common\models;
 
 use common\behaviors\MerchantBehavior;
 
 /**
- * This is the model class for table "{{%wechat_attachment}}".
+ * This is the model class for table "{{%addon_wechat_attachment}}".
  *
  * @property string $id
  * @property string $file_name 文件原始名
@@ -73,7 +73,7 @@ class Attachment extends \common\models\base\BaseModel
      */
     public static function tableName()
     {
-        return '{{%wechat_attachment}}';
+        return '{{%addon_wechat_attachment}}';
     }
 
     /**

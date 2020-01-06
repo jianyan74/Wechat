@@ -1,6 +1,6 @@
 <?php
 
-namespace addons\RfWechat\common\models;
+namespace addons\Wechat\common\models;
 
 /**
  * This is the model class for table "rf_wechat_form_id".
@@ -19,7 +19,7 @@ class FormId extends \common\models\base\BaseModel
      */
     public static function tableName()
     {
-        return '{{%wechat_form_id}}';
+        return '{{%addon_wechat_form_id}}';
     }
 
     /**

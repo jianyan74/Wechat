@@ -1,8 +1,8 @@
 <?php
-namespace addons\RfWechat\common\models;
+namespace addons\Wechat\common\models;
 
 /**
- * This is the model class for table "{{%wechat_menu_provinces}}".
+ * This is the model class for table "{{%addon_wechat_menu_provinces}}".
  *
  * @property int $id
  * @property string $title 栏目名
@@ -19,7 +19,7 @@ class MenuProvinces extends \common\models\base\BaseModel
      */
     public static function tableName()
     {
-        return '{{%wechat_menu_provinces}}';
+        return '{{%addon_wechat_menu_provinces}}';
     }
 
     /**

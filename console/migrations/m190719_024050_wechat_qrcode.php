@@ -10,7 +10,7 @@ class m190719_024050_wechat_qrcode extends Migration
         $this->execute('SET foreign_key_checks = 0');
         
         /* 创建表 */
-        $this->createTable('{{%wechat_qrcode}}', [
+        $this->createTable('{{%addon_wechat_qrcode}}', [
             'id' => "int(10) unsigned NOT NULL AUTO_INCREMENT",
             'merchant_id' => "int(10) unsigned NULL DEFAULT '0' COMMENT '商户id'",
             'name' => "varchar(50) NULL DEFAULT '' COMMENT '场景名称'",
@@ -32,8 +32,8 @@ class m190719_024050_wechat_qrcode extends Migration
         ], "ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='微信_二维码表'");
         
         /* 索引设置 */
-        $this->createIndex('idx_qrcid','{{%wechat_qrcode}}','scene_id',0);
-        $this->createIndex('ticket','{{%wechat_qrcode}}','ticket',0);
+        $this->createIndex('idx_qrcid','{{%addon_wechat_qrcode}}','scene_id',0);
+        $this->createIndex('ticket','{{%addon_wechat_qrcode}}','ticket',0);
         
         
         /* 表数据 */
@@ -46,7 +46,7 @@ class m190719_024050_wechat_qrcode extends Migration
     {
         $this->execute('SET foreign_key_checks = 0');
         /* 删除表 */
-        $this->dropTable('{{%wechat_qrcode}}');
+        $this->dropTable('{{%addon_wechat_qrcode}}');
         $this->execute('SET foreign_key_checks = 1;');
     }
 }

@@ -1,16 +1,16 @@
 <?php
 
-namespace addons\RfWechat\services;
+namespace addons\Wechat\services;
 
 use Yii;
 use yii\web\UnprocessableEntityHttpException;
 use common\components\Service;
-use addons\RfWechat\common\models\FormId;
-use addons\RfWechat\common\queues\WechatTemplateMsgJob;
+use addons\Wechat\common\models\FormId;
+use addons\Wechat\common\queues\WechatTemplateMsgJob;
 
 /**
  * Class TemplateMsgService
- * @package addons\RfWechat\services
+ * @package addons\Wechat\services
  * @author kbdxbt
  */
 class TemplateMsgService extends Service
@@ -32,7 +32,7 @@ class TemplateMsgService extends Service
      * 发送模板消息
      *
      * ```php
-     *       Yii::$app->wechatServices->TemplateMsg->send($data)
+     *       Yii::$app->wechatService->TemplateMsg->send($data)
      * ```
      *
      * @param array $data 模板数据

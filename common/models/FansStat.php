@@ -1,5 +1,5 @@
 <?php
-namespace addons\RfWechat\common\models;
+namespace addons\Wechat\common\models;
 
 use Yii;
 use yii\behaviors\BlameableBehavior;
@@ -7,7 +7,7 @@ use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 
 /**
- * This is the model class for table "{{%wechat_fans_stat}}".
+ * This is the model class for table "{{%addon_wechat_fans_stat}}".
  *
  * @property string $id
  * @property int $new_attention 今日新关注
@@ -25,7 +25,7 @@ class FansStat extends \common\models\base\BaseModel
      */
     public static function tableName()
     {
-        return '{{%wechat_fans_stat}}';
+        return '{{%addon_wechat_fans_stat}}';
     }
 
     /**

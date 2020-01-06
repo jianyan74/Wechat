@@ -1,14 +1,14 @@
 <?php
 
-namespace addons\RfWechat\services;
+namespace addons\Wechat\services;
 
 use Yii;
 use common\components\Service;
-use addons\RfWechat\common\models\FansTagMap;
+use addons\Wechat\common\models\FansTagMap;
 
 /**
  * Class FansTagMapService
- * @package addons\RfWechat\services
+ * @package addons\Wechat\services
  * @author jianyan74 <751393839@qq.com>
  */
 class FansTagMapService extends Service

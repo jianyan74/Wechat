@@ -10,7 +10,7 @@ class m190719_024050_wechat_rule extends Migration
         $this->execute('SET foreign_key_checks = 0');
         
         /* 创建表 */
-        $this->createTable('{{%wechat_rule}}', [
+        $this->createTable('{{%addon_wechat_rule}}', [
             'id' => "int(10) unsigned NOT NULL AUTO_INCREMENT",
             'merchant_id' => "int(10) unsigned NULL DEFAULT '0' COMMENT '商户id'",
             'name' => "varchar(50) NOT NULL DEFAULT '' COMMENT '规则名称'",
@@ -36,7 +36,7 @@ class m190719_024050_wechat_rule extends Migration
     {
         $this->execute('SET foreign_key_checks = 0');
         /* 删除表 */
-        $this->dropTable('{{%wechat_rule}}');
+        $this->dropTable('{{%addon_wechat_rule}}');
         $this->execute('SET foreign_key_checks = 1;');
     }
 }

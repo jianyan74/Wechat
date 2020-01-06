@@ -10,7 +10,7 @@ class m190719_024050_wechat_fans_stat extends Migration
         $this->execute('SET foreign_key_checks = 0');
         
         /* 创建表 */
-        $this->createTable('{{%wechat_fans_stat}}', [
+        $this->createTable('{{%addon_wechat_fans_stat}}', [
             'id' => "int(10) unsigned NOT NULL AUTO_INCREMENT",
             'merchant_id' => "int(10) unsigned NULL DEFAULT '0' COMMENT '商户id'",
             'new_attention' => "int(10) NOT NULL DEFAULT '0' COMMENT '今日新关注'",
@@ -24,7 +24,7 @@ class m190719_024050_wechat_fans_stat extends Migration
         ], "ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='微信_关注统计表'");
         
         /* 索引设置 */
-        $this->createIndex('uniacid','{{%wechat_fans_stat}}','date',0);
+        $this->createIndex('uniacid','{{%addon_wechat_fans_stat}}','date',0);
         
         
         /* 表数据 */
@@ -37,7 +37,7 @@ class m190719_024050_wechat_fans_stat extends Migration
     {
         $this->execute('SET foreign_key_checks = 0');
         /* 删除表 */
-        $this->dropTable('{{%wechat_fans_stat}}');
+        $this->dropTable('{{%addon_wechat_fans_stat}}');
         $this->execute('SET foreign_key_checks = 1;');
     }
 }

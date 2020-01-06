@@ -1,15 +1,15 @@
 <?php
 
-namespace addons\RfWechat\services;
+namespace addons\Wechat\services;
 
 use Yii;
-use addons\RfWechat\common\models\FansStat;
+use addons\Wechat\common\models\FansStat;
 use common\components\Service;
 use common\enums\CacheEnum;
 
 /**
  * Class FansStatService
- * @package addons\RfWechat\services
+ * @package addons\Wechat\services
  * @author jianyan74 <751393839@qq.com>
  */
 class FansStatService extends Service
@@ -154,7 +154,7 @@ class FansStatService extends Service
         }
 
         // 今日累计关注统计计算
-        $cumulate_attention = Yii::$app->wechatServices->fans->getCountFollow();
+        $cumulate_attention = Yii::$app->wechatService->fans->getCountFollow();
         if (!($today = FansStat::find()->where(['date' => date('Y-m-d')])->one())) {
             $today = new FansStat();
             $today->date = date('Y-m-d');

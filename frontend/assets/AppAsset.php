@@ -1,6 +1,6 @@
 <?php
 
-namespace addons\RfWechat\frontend\assets;
+namespace addons\Wechat\frontend\assets;
 
 use yii\web\AssetBundle;
 
@@ -8,14 +8,14 @@ use yii\web\AssetBundle;
  * 静态资源管理
  *
  * Class AppAsset
- * @package addons\RfWechat\frontend\assets
+ * @package addons\Wechat\frontend\assets
  */
 class AppAsset extends AssetBundle
 {
     /**
      * @var string
      */
-    public $sourcePath = '@addons/RfWechat/frontend/resources/';
+    public $sourcePath = '@addons/Wechat/frontend/resources/';
 
     public $css = [
     ];

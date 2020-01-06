@@ -1,11 +1,11 @@
 <?php
-namespace addons\RfWechat\common\models;
+namespace addons\Wechat\common\models;
 
 use Yii;
 use common\behaviors\MerchantBehavior;
 
 /**
- * This is the model class for table "{{%wechat_qrcode}}".
+ * This is the model class for table "{{%addon_wechat_qrcode}}".
  *
  * @property string $id
  * @property string $name 场景名称
@@ -43,7 +43,7 @@ class Qrcode extends \common\models\base\BaseModel
      */
     public static function tableName()
     {
-        return '{{%wechat_qrcode}}';
+        return '{{%addon_wechat_qrcode}}';
     }
 
     /**

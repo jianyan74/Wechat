@@ -1,12 +1,12 @@
 <?php
 
-namespace addons\RfWechat\common\enums;
+namespace addons\Wechat\common\enums;
 
 use common\enums\BaseEnum;
 
 /**
  * Class MenuLanguageEnum
- * @package addons\RfWechat\common\enums
+ * @package addons\Wechat\common\enums
  * @author jianyan74 <751393839@qq.com>
  */
 class MenuLanguageEnum extends BaseEnum

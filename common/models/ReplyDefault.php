@@ -1,11 +1,11 @@
 <?php
-namespace addons\RfWechat\common\models;
+namespace addons\Wechat\common\models;
 
 use common\behaviors\MerchantBehavior;
 use common\models\base\BaseModel;
 
 /**
- * This is the model class for table "{{%wechat_reply_default}}".
+ * This is the model class for table "{{%addon_wechat_reply_default}}".
  *
  * @property int $id
  * @property string $follow_content 关注回复关键字
@@ -23,7 +23,7 @@ class ReplyDefault extends BaseModel
      */
     public static function tableName()
     {
-        return '{{%wechat_reply_default}}';
+        return '{{%addon_wechat_reply_default}}';
     }
 
     /**

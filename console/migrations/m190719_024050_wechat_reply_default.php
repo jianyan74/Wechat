@@ -10,7 +10,7 @@ class m190719_024050_wechat_reply_default extends Migration
         $this->execute('SET foreign_key_checks = 0');
         
         /* 创建表 */
-        $this->createTable('{{%wechat_reply_default}}', [
+        $this->createTable('{{%addon_wechat_reply_default}}', [
             'id' => "int(11) NOT NULL AUTO_INCREMENT",
             'merchant_id' => "int(10) unsigned NULL DEFAULT '0' COMMENT '商户id'",
             'follow_content' => "varchar(200) NULL DEFAULT '' COMMENT '关注回复关键字'",
@@ -34,7 +34,7 @@ class m190719_024050_wechat_reply_default extends Migration
     {
         $this->execute('SET foreign_key_checks = 0');
         /* 删除表 */
-        $this->dropTable('{{%wechat_reply_default}}');
+        $this->dropTable('{{%addon_wechat_reply_default}}');
         $this->execute('SET foreign_key_checks = 1;');
     }
 }

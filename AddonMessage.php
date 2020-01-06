@@ -1,6 +1,6 @@
 <?php
 
-namespace addons\RfWechat;
+namespace addons\Wechat;
 
 use Yii;
 use common\interfaces\AddonWidget;
@@ -9,8 +9,7 @@ use common\interfaces\AddonWidget;
  * 微信消息处理
  *
  * Class AddonMessage
- * @package addons\RfWechat
- */
+ * @package addons\Wechat */
 class AddonMessage implements AddonWidget
 {
     /**

@@ -1,13 +1,13 @@
 <?php
 
-namespace addons\RfWechat\services;
+namespace addons\Wechat\services;
 
 use common\components\Service;
-use addons\RfWechat\common\models\RuleKeywordStat;
+use addons\Wechat\common\models\RuleKeywordStat;
 
 /**
  * Class RuleKeywordStatService
- * @package addons\RfWechat\services
+ * @package addons\Wechat\services
  * @author jianyan74 <751393839@qq.com>
  */
 class RuleKeywordStatService extends Service

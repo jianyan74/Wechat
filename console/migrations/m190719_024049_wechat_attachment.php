@@ -10,7 +10,7 @@ class m190719_024049_wechat_attachment extends Migration
         $this->execute('SET foreign_key_checks = 0');
         
         /* 创建表 */
-        $this->createTable('{{%wechat_attachment}}', [
+        $this->createTable('{{%addon_wechat_attachment}}', [
             'id' => "int(10) unsigned NOT NULL AUTO_INCREMENT",
             'merchant_id' => "int(10) unsigned NULL DEFAULT '0' COMMENT '商户id'",
             'file_name' => "varchar(150) NULL DEFAULT '' COMMENT '文件原始名'",
@@ -33,7 +33,7 @@ class m190719_024049_wechat_attachment extends Migration
         ], "ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='微信_资源表'");
         
         /* 索引设置 */
-        $this->createIndex('media_id','{{%wechat_attachment}}','media_id',0);
+        $this->createIndex('media_id','{{%addon_wechat_attachment}}','media_id',0);
         
         
         /* 表数据 */
@@ -46,7 +46,7 @@ class m190719_024049_wechat_attachment extends Migration
     {
         $this->execute('SET foreign_key_checks = 0');
         /* 删除表 */
-        $this->dropTable('{{%wechat_attachment}}');
+        $this->dropTable('{{%addon_wechat_attachment}}');
         $this->execute('SET foreign_key_checks = 1;');
     }
 }

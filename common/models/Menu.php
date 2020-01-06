@@ -1,11 +1,11 @@
 <?php
-namespace addons\RfWechat\common\models;
+namespace addons\Wechat\common\models;
 
 use common\behaviors\MerchantBehavior;
 use common\enums\StatusEnum;
 
 /**
- * This is the model class for table "{{%wechat_custom_menu}}".
+ * This is the model class for table "{{%addon_wechat_custom_menu}}".
  *
  * @property int $id 公众号id
  * @property string $menu_id 微信菜单id
@@ -99,7 +99,7 @@ class Menu extends \common\models\base\BaseModel
      */
     public static function tableName()
     {
-        return '{{%wechat_menu}}';
+        return '{{%addon_wechat_menu}}';
     }
 
     /**

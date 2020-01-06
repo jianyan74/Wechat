@@ -1,6 +1,6 @@
 <?php
 
-namespace addons\RfWechat;
+namespace addons\Wechat;
 
 use Yii;
 use yii\db\Migration;
@@ -11,7 +11,7 @@ use common\interfaces\AddonWidget;
  * 卸载
  *
  * Class UnInstall
- * @package addons\RfWechat
+ * @package addons\Wechat
  */
 class UnInstall extends Migration implements AddonWidget
 {
@@ -25,7 +25,7 @@ class UnInstall extends Migration implements AddonWidget
     public function run($addon)
     {
          MigrateHelper::downByPath([
-             '@addons/RfWechat/console/migrations/'
+             '@addons/Wechat/console/migrations/'
          ]);
     }
 }

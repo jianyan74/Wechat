@@ -1,13 +1,13 @@
 <?php
 
-namespace addons\RfWechat\services;
+namespace addons\Wechat\services;
 
-use addons\RfWechat\common\models\ReplyDefault;
+use addons\Wechat\common\models\ReplyDefault;
 use common\components\Service;
 
 /**
  * Class ReplyDefaultService
- * @package addons\RfWechat\services
+ * @package addons\Wechat\services
  * @author jianyan74 <751393839@qq.com>
  */
 class ReplyDefaultService extends Service

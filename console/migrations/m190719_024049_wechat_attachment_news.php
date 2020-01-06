@@ -10,7 +10,7 @@ class m190719_024049_wechat_attachment_news extends Migration
         $this->execute('SET foreign_key_checks = 0');
         
         /* 创建表 */
-        $this->createTable('{{%wechat_attachment_news}}', [
+        $this->createTable('{{%addon_wechat_attachment_news}}', [
             'id' => "int(11) NOT NULL AUTO_INCREMENT",
             'merchant_id' => "int(10) unsigned NULL DEFAULT '0' COMMENT '商户id'",
             'attachment_id' => "int(10) unsigned NULL DEFAULT '0' COMMENT '关联的资源id'",
@@ -34,7 +34,7 @@ class m190719_024049_wechat_attachment_news extends Migration
         ], "ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='微信_文章表'");
         
         /* 索引设置 */
-        $this->createIndex('attachment_id','{{%wechat_attachment_news}}','attachment_id',0);
+        $this->createIndex('attachment_id','{{%addon_wechat_attachment_news}}','attachment_id',0);
         
         
         /* 表数据 */
@@ -47,7 +47,7 @@ class m190719_024049_wechat_attachment_news extends Migration
     {
         $this->execute('SET foreign_key_checks = 0');
         /* 删除表 */
-        $this->dropTable('{{%wechat_attachment_news}}');
+        $this->dropTable('{{%addon_wechat_attachment_news}}');
         $this->execute('SET foreign_key_checks = 1;');
     }
 }

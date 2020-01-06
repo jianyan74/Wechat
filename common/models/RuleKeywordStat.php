@@ -1,5 +1,5 @@
 <?php
-namespace addons\RfWechat\common\models;
+namespace addons\Wechat\common\models;
 
 use Yii;
 use common\behaviors\MerchantBehavior;
@@ -8,7 +8,7 @@ use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 
 /**
- * This is the model class for table "{{%wechat_rule_keyword_stat}}".
+ * This is the model class for table "{{%addon_wechat_rule_keyword_stat}}".
  *
  * @property string $id
  * @property int $rule_id 规则id
@@ -30,7 +30,7 @@ class RuleKeywordStat extends \common\models\base\BaseModel
      */
     public static function tableName()
     {
-        return '{{%wechat_rule_keyword_stat}}';
+        return '{{%addon_wechat_rule_keyword_stat}}';
     }
 
     /**

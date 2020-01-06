@@ -1,11 +1,11 @@
 <?php
 
-namespace addons\RfWechat\console\controllers;
+namespace addons\Wechat\console\controllers;
 
 use Yii;
 use yii\console\Controller;
 use common\enums\StatusEnum;
-use addons\RfWechat\common\models\MassRecord;
+use addons\Wechat\common\models\MassRecord;
 
 /**
  * Class SendMessageController
@@ -27,7 +27,7 @@ class SendMessageController extends Controller
 
         /** @var MassRecord $record */
         foreach ($models as $record) {
-            if (Yii::$app->wechatServices->message->send($record)) {
+            if (Yii::$app->wechatService->message->send($record)) {
                 $this->stdout(date('Y-m-d H:i:s') . ' --- ' . '发送成功, 所属商户ID:' . $record->merchant_id . PHP_EOL);
             } else {
                 $this->stderr(date('Y-m-d H:i:s') . ' --- ' . '发送失败, 所属商户ID:' . $record->merchant_id . PHP_EOL);

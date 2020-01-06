@@ -1,11 +1,11 @@
 <?php
-namespace addons\RfWechat\common\models;
+namespace addons\Wechat\common\models;
 
 use common\behaviors\MerchantBehavior;
 use common\models\member\Member;
 
 /**
- * This is the model class for table "{{%wechat_fans}}".
+ * This is the model class for table "{{%addon_wechat_fans}}".
  *
  * @property string $id
  * @property string $member_id 用户id
@@ -52,7 +52,7 @@ class Fans extends \common\models\base\BaseModel
      */
     public static function tableName()
     {
-        return '{{%wechat_fans}}';
+        return '{{%addon_wechat_fans}}';
     }
 
     /**

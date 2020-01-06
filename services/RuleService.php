@@ -1,6 +1,6 @@
 <?php
 
-namespace addons\RfWechat\services;
+namespace addons\Wechat\services;
 
 use Yii;
 use yii\helpers\Json;
@@ -9,7 +9,7 @@ use common\helpers\ExecuteHelper;
 
 /**
  * Class RuleService
- * @package addons\RfWechat\services
+ * @package addons\Wechat\services
  * @author jianyan74 <751393839@qq.com>
  */
 class RuleService extends Service

@@ -1,15 +1,15 @@
 <?php
 
-namespace addons\RfWechat\services;
+namespace addons\Wechat\services;
 
 use Yii;
 use yii\web\NotFoundHttpException;
-use addons\RfWechat\common\models\FansTags;
+use addons\Wechat\common\models\FansTags;
 use common\components\Service;
 
 /**
  * Class FansTagsService
- * @package addons\RfWechat\services
+ * @package addons\Wechat\services
  * @author jianyan74 <751393839@qq.com>
  */
 class FansTagsService extends Service

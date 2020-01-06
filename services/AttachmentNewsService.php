@@ -1,18 +1,18 @@
 <?php
 
-namespace addons\RfWechat\services;
+namespace addons\Wechat\services;
 
 use yii\helpers\Json;
 use yii\data\Pagination;
 use common\enums\StatusEnum;
 use common\helpers\Url;
 use common\components\Service;
-use addons\RfWechat\common\models\AttachmentNews;
-use addons\RfWechat\common\models\Attachment;
+use addons\Wechat\common\models\AttachmentNews;
+use addons\Wechat\common\models\Attachment;
 
 /**
  * Class AttachmentNewsService
- * @package addons\RfWechat\services
+ * @package addons\Wechat\services
  * @author jianyan74 <751393839@qq.com>
  */
 class AttachmentNewsService extends Service

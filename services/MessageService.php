@@ -1,15 +1,15 @@
 <?php
 
-namespace addons\RfWechat\services;
+namespace addons\Wechat\services;
 
 use Yii;
 use common\helpers\ExecuteHelper;
-use addons\RfWechat\common\models\Setting;
+use addons\Wechat\common\models\Setting;
 use common\components\Service;
 use common\helpers\AddonHelper;
-use addons\RfWechat\common\models\Rule;
+use addons\Wechat\common\models\Rule;
 use common\enums\StatusEnum;
-use addons\RfWechat\common\models\MassRecord;
+use addons\Wechat\common\models\MassRecord;
 use EasyWeChat\Kernel\Messages\Text;
 use EasyWeChat\Kernel\Messages\Image;
 use EasyWeChat\Kernel\Messages\Video;
@@ -19,7 +19,7 @@ use EasyWeChat\Kernel\Messages\NewsItem;
 
 /**
  * Class MessageService
- * @package addons\RfWechat\services
+ * @package addons\Wechat\services
  * @author jianyan74 <751393839@qq.com>
  */
 class MessageService extends Service
@@ -112,7 +112,7 @@ class MessageService extends Service
                 break;
             // 图文回复
             case Rule::RULE_MODULE_NEWS :
-                $new = Yii::$app->wechatServices->attachmentNews->first($data);
+                $new = Yii::$app->wechatService->attachmentNews->first($data);
                 $newsList[] = new NewsItem([
                     'title' => $new['title'],
                     'description' => $new['digest'],
@@ -124,7 +124,7 @@ class MessageService extends Service
                 break;
             // 视频回复
             case Rule::RULE_MODULE_VIDEO :
-                $video = Yii::$app->wechatServices->attachment->findByMediaId($data);
+                $video = Yii::$app->wechatService->attachment->findByMediaId($data);
                 $message = new Video($data, [
                     'title' => $video['file_name'],
                     'description' => $video['description'],
@@ -168,12 +168,12 @@ class MessageService extends Service
      */
     public function text()
     {
-        $message = Yii::$app->wechatServices->message->getMessage();
+        $message = Yii::$app->wechatService->message->getMessage();
         // 查询用户关键字匹配
-        if (!($reply = Yii::$app->wechatServices->ruleKeyword->match($message['Content']))) {
-            $replyDefault = Yii::$app->wechatServices->replyDefault->findOne();
+        if (!($reply = Yii::$app->wechatService->ruleKeyword->match($message['Content']))) {
+            $replyDefault = Yii::$app->wechatService->replyDefault->findOne();
             if ($replyDefault->default_content) {
-                $reply = Yii::$app->wechatServices->ruleKeyword->match($replyDefault->default_content);
+                $reply = Yii::$app->wechatService->ruleKeyword->match($replyDefault->default_content);
             } else {
                 return false;
             }
@@ -190,9 +190,9 @@ class MessageService extends Service
      */
     public function follow()
     {
-        $replyDefault = Yii::$app->wechatServices->replyDefault->findOne();
+        $replyDefault = Yii::$app->wechatService->replyDefault->findOne();
         if ($replyDefault->follow_content) {
-            return Yii::$app->wechatServices->ruleKeyword->match($replyDefault->follow_content);
+            return Yii::$app->wechatService->ruleKeyword->match($replyDefault->follow_content);
         }
 
         return false;
@@ -208,11 +208,11 @@ class MessageService extends Service
     {
         $message = $this->getMessage();
         $msgType = $message['MsgType'];
-        $special = Yii::$app->wechatServices->setting->getByFieldName('special');
+        $special = Yii::$app->wechatService->setting->getByFieldName('special');
         if (isset($special[$msgType])) {
             // 关键字
             if ($special[$msgType]['type'] == Setting::SPECIAL_TYPE_KEYWORD) {
-                if ($default = Yii::$app->wechatServices->ruleKeyword->match($special[$msgType]['content'])) {
+                if ($default = Yii::$app->wechatService->ruleKeyword->match($special[$msgType]['content'])) {
                     return $default;
                 }
             }

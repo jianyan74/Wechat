@@ -10,7 +10,7 @@ class m190719_024050_wechat_fans extends Migration
         $this->execute('SET foreign_key_checks = 0');
         
         /* 创建表 */
-        $this->createTable('{{%wechat_fans}}', [
+        $this->createTable('{{%addon_wechat_fans}}', [
             'id' => "int(10) unsigned NOT NULL AUTO_INCREMENT",
             'merchant_id' => "int(10) unsigned NULL DEFAULT '0' COMMENT '商户id'",
             'member_id' => "int(10) unsigned NULL DEFAULT '0' COMMENT '用户id'",
@@ -38,9 +38,9 @@ class m190719_024050_wechat_fans extends Migration
         ], "ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='微信_粉丝表'");
         
         /* 索引设置 */
-        $this->createIndex('openid','{{%wechat_fans}}','openid',0);
-        $this->createIndex('nickname','{{%wechat_fans}}','nickname',0);
-        $this->createIndex('member_id','{{%wechat_fans}}','member_id',0);
+        $this->createIndex('openid','{{%addon_wechat_fans}}','openid',0);
+        $this->createIndex('nickname','{{%addon_wechat_fans}}','nickname',0);
+        $this->createIndex('member_id','{{%addon_wechat_fans}}','member_id',0);
         
         
         /* 表数据 */
@@ -53,7 +53,7 @@ class m190719_024050_wechat_fans extends Migration
     {
         $this->execute('SET foreign_key_checks = 0');
         /* 删除表 */
-        $this->dropTable('{{%wechat_fans}}');
+        $this->dropTable('{{%addon_wechat_fans}}');
         $this->execute('SET foreign_key_checks = 1;');
     }
 }

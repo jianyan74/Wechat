@@ -1,10 +1,10 @@
 <?php
-namespace addons\RfWechat\common\models;
+namespace addons\Wechat\common\models;
 
 use common\behaviors\MerchantBehavior;
 
 /**
- * This is the model class for table "{{%wechat_setting}}".
+ * This is the model class for table "{{%addon_wechat_setting}}".
  *
  * @property int $id
  * @property string $merchant_id 商户id
@@ -32,7 +32,7 @@ class Setting extends \common\models\base\BaseModel
      */
     public static function tableName()
     {
-        return '{{%wechat_setting}}';
+        return '{{%addon_wechat_setting}}';
     }
 
     /**

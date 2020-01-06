@@ -1,11 +1,11 @@
 <?php
-namespace addons\RfWechat\common\models;
+namespace addons\Wechat\common\models;
 
 use common\behaviors\MerchantBehavior;
 use common\helpers\StringHelper;
 
 /**
- * This is the model class for table "{{%wechat_mass_record}}".
+ * This is the model class for table "{{%addon_wechat_mass_record}}".
  *
  * @property string $id
  * @property string $tag_name 标签名称
@@ -33,7 +33,7 @@ class MassRecord extends \common\models\base\BaseModel
      */
     public static function tableName()
     {
-        return '{{%wechat_mass_record}}';
+        return '{{%addon_wechat_mass_record}}';
     }
 
     /**

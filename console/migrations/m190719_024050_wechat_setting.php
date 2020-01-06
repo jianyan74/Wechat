@@ -10,7 +10,7 @@ class m190719_024050_wechat_setting extends Migration
         $this->execute('SET foreign_key_checks = 0');
         
         /* 创建表 */
-        $this->createTable('{{%wechat_setting}}', [
+        $this->createTable('{{%addon_wechat_setting}}', [
             'id' => "int(11) NOT NULL AUTO_INCREMENT",
             'merchant_id' => "int(10) unsigned NULL DEFAULT '0' COMMENT '商户id'",
             'history' => "json NULL COMMENT '历史消息参数设置'",
@@ -34,7 +34,7 @@ class m190719_024050_wechat_setting extends Migration
     {
         $this->execute('SET foreign_key_checks = 0');
         /* 删除表 */
-        $this->dropTable('{{%wechat_setting}}');
+        $this->dropTable('{{%addon_wechat_setting}}');
         $this->execute('SET foreign_key_checks = 1;');
     }
 }

@@ -1,18 +1,30 @@
 <?php
 
-namespace addons\RfWechat\oauth2\controllers;
+namespace addons\Wechat\oauth2\controllers;
 
 use Yii;
-use common\controllers\AddonsController;
+use oauth2\controllers\OnAuthController;
 
 /**
  * 默认控制器
  *
  * Class DefaultController
- * @package addons\RfWechat\oauth2\controllers
+ * @package addons\Wechat\oauth2\controllers
  */
-class DefaultController extends BaseController
+class DefaultController extends OnAuthController
 {
+    public $modelClass = '';
+
+    /**
+    * 不用进行登录验证的方法
+    *
+    * 例如： ['index', 'update', 'create', 'view', 'delete']
+    * 默认全部需要验证
+    *
+    * @var array
+    */
+    protected $authOptional = ['index'];
+
     /**
     * 首页
     *
@@ -20,8 +32,6 @@ class DefaultController extends BaseController
     */
     public function actionIndex()
     {
-        return $this->render('index',[
-
-        ]);
+        return 'Hello world';
     }
 }

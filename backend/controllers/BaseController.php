@@ -1,6 +1,6 @@
 <?php
 
-namespace addons\RfWechat\backend\controllers;
+namespace addons\Wechat\backend\controllers;
 
 use Yii;
 use common\controllers\AddonsController;
@@ -9,12 +9,12 @@ use common\controllers\AddonsController;
  * 默认控制器
  *
  * Class DefaultController
- * @package addons\RfWechat\backend\controllers
+ * @package addons\Wechat\backend\controllers
  */
 class BaseController extends AddonsController
 {
     /**
     * @var string
     */
-    public $layout = "@backend/views/layouts/main";
+    // public $layout = "@addons/Wechat/backend/views/layouts/main";
 }

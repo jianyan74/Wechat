@@ -1,15 +1,15 @@
 <?php
 
-namespace addons\RfWechat\services;
+namespace addons\Wechat\services;
 
 use common\components\Service;
-use addons\RfWechat\common\models\MenuProvinces;
+use addons\Wechat\common\models\MenuProvinces;
 use common\enums\StatusEnum;
 use common\helpers\ArrayHelper;
 
 /**
  * Class MenuProvincesService
- * @package addons\RfWechat\services
+ * @package addons\Wechat\services
  * @author jianyan74 <751393839@qq.com>
  */
 class MenuProvincesService extends Service

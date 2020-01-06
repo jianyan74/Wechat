@@ -1,10 +1,10 @@
 <?php
-namespace addons\RfWechat\common\models;
+namespace addons\Wechat\common\models;
 
 use common\behaviors\MerchantBehavior;
 
 /**
- * This is the model class for table "{{%wechat_msg_history}}".
+ * This is the model class for table "{{%addon_wechat_msg_history}}".
  *
  * @property string $id
  * @property string $rule_id 规则id
@@ -27,7 +27,7 @@ class MsgHistory extends \common\models\base\BaseModel
      */
     public static function tableName()
     {
-        return '{{%wechat_msg_history}}';
+        return '{{%addon_wechat_msg_history}}';
     }
 
     /**

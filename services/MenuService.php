@@ -1,15 +1,15 @@
 <?php
 
-namespace addons\RfWechat\services;
+namespace addons\Wechat\services;
 
 use Yii;
 use yii\web\UnprocessableEntityHttpException;
-use addons\RfWechat\common\models\Menu;
+use addons\Wechat\common\models\Menu;
 use common\components\Service;
 
 /**
  * Class MenuService
- * @package addons\RfWechat\services
+ * @package addons\Wechat\services
  * @author jianyan74 <751393839@qq.com>
  */
 class MenuService extends Service

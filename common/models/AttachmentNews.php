@@ -1,10 +1,10 @@
 <?php
-namespace addons\RfWechat\common\models;
+namespace addons\Wechat\common\models;
 
 use common\behaviors\MerchantBehavior;
 
 /**
- * This is the model class for table "{{%wechat_attachment_news}}".
+ * This is the model class for table "{{%addon_wechat_attachment_news}}".
  *
  * @property int $id
  * @property string $attachment_id 关联的资源id
@@ -31,7 +31,7 @@ class AttachmentNews extends \common\models\base\BaseModel
      */
     public static function tableName()
     {
-        return '{{%wechat_attachment_news}}';
+        return '{{%addon_wechat_attachment_news}}';
     }
 
     /**

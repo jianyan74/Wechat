@@ -10,7 +10,7 @@ class m190719_024050_wechat_msg_history extends Migration
         $this->execute('SET foreign_key_checks = 0');
         
         /* 创建表 */
-        $this->createTable('{{%wechat_msg_history}}', [
+        $this->createTable('{{%addon_wechat_msg_history}}', [
             'id' => "int(10) unsigned NOT NULL AUTO_INCREMENT",
             'merchant_id' => "int(10) unsigned NULL DEFAULT '0' COMMENT '商户id'",
             'rule_id' => "int(10) unsigned NULL DEFAULT '0' COMMENT '规则id'",
@@ -40,7 +40,7 @@ class m190719_024050_wechat_msg_history extends Migration
     {
         $this->execute('SET foreign_key_checks = 0');
         /* 删除表 */
-        $this->dropTable('{{%wechat_msg_history}}');
+        $this->dropTable('{{%addon_wechat_msg_history}}');
         $this->execute('SET foreign_key_checks = 1;');
     }
 }

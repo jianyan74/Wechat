@@ -1,6 +1,6 @@
 <?php
 
-namespace addons\RfWechat\merchant\controllers;
+namespace addons\Wechat\merchant\controllers;
 
 use Yii;
 use common\controllers\AddonsController;
@@ -9,7 +9,7 @@ use common\controllers\AddonsController;
  * 默认控制器
  *
  * Class DefaultController
- * @package addons\RfWechat\merchant\controllers
+ * @package addons\Wechat\merchant\controllers
  */
 class BaseController extends AddonsController
 {

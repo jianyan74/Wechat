@@ -1,12 +1,12 @@
 <?php
 
-namespace addons\RfWechat\services;
+namespace addons\Wechat\services;
 
 use Yii;
 use yii\data\Pagination;
 use common\helpers\Url;
-use addons\RfWechat\common\models\Attachment;
-use addons\RfWechat\common\models\AttachmentNews;
+use addons\Wechat\common\models\Attachment;
+use addons\Wechat\common\models\AttachmentNews;
 use common\components\Service;
 use common\helpers\StringHelper;
 use common\enums\StatusEnum;
@@ -14,7 +14,7 @@ use EasyWeChat\Kernel\Messages\Article;
 
 /**
  * Class AttachmentService
- * @package addons\RfWechat\services
+ * @package addons\Wechat\services
  * @author jianyan74 <751393839@qq.com>
  */
 class AttachmentService extends Service
@@ -197,7 +197,7 @@ class AttachmentService extends Service
         $news_item = $this->isUploadWechatByNews($model, $wechatArticleList, $isNewRecord);
         // 插入文章到表
         foreach ($list as $k => $vo) {
-            $news = Yii::$app->wechatServices->attachmentNews->findModel($vo['id'] ?? null);
+            $news = Yii::$app->wechatService->attachmentNews->findModel($vo['id'] ?? null);
             $news->attributes = $vo;
             $news->attachment_id = $model->id;
             // 判断是否微信 否则直接拿取图文链接

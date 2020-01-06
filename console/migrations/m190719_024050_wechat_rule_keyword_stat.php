@@ -10,7 +10,7 @@ class m190719_024050_wechat_rule_keyword_stat extends Migration
         $this->execute('SET foreign_key_checks = 0');
         
         /* 创建表 */
-        $this->createTable('{{%wechat_rule_keyword_stat}}', [
+        $this->createTable('{{%addon_wechat_rule_keyword_stat}}', [
             'id' => "int(10) unsigned NOT NULL AUTO_INCREMENT",
             'merchant_id' => "int(10) unsigned NULL DEFAULT '0' COMMENT '商户id'",
             'rule_id' => "int(10) NULL DEFAULT '0' COMMENT '规则id'",
@@ -38,7 +38,7 @@ class m190719_024050_wechat_rule_keyword_stat extends Migration
     {
         $this->execute('SET foreign_key_checks = 0');
         /* 删除表 */
-        $this->dropTable('{{%wechat_rule_keyword_stat}}');
+        $this->dropTable('{{%addon_wechat_rule_keyword_stat}}');
         $this->execute('SET foreign_key_checks = 1;');
     }
 }

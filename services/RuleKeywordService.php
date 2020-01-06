@@ -1,12 +1,12 @@
 <?php
 
-namespace addons\RfWechat\services;
+namespace addons\Wechat\services;
 
 use Yii;
 use common\components\Service;
 use common\enums\StatusEnum;
-use addons\RfWechat\common\models\Rule;
-use addons\RfWechat\common\models\RuleKeyword;
+use addons\Wechat\common\models\Rule;
+use addons\Wechat\common\models\RuleKeyword;
 use common\helpers\AddonHelper;
 use common\helpers\ExecuteHelper;
 use common\helpers\ArrayHelper;
@@ -19,7 +19,7 @@ use EasyWeChat\Kernel\Messages\NewsItem;
 
 /**
  * Class RuleKeywordService
- * @package addons\RfWechat\services
+ * @package addons\Wechat\services
  * @author jianyan74 <751393839@qq.com>
  */
 class RuleKeywordService extends Service
@@ -112,8 +112,8 @@ class RuleKeywordService extends Service
                 break;
             // 自定义接口回复
             case Rule::RULE_MODULE_USER_API :
-                if ($apiContent = Yii::$app->wechatServices->rule->getApiData($model,
-                    Yii::$app->wechatServices->message->getMessage())) {
+                if ($apiContent = Yii::$app->wechatService->rule->getApiData($model,
+                    Yii::$app->wechatService->message->getMessage())) {
                     return $apiContent;
                 }
 
@@ -124,7 +124,7 @@ class RuleKeywordService extends Service
                 Yii::$app->params['msgHistory']['addons_name'] = $model->data;
 
                 $class = AddonHelper::getAddonMessage($model->data);
-                return ExecuteHelper::map($class, 'run', Yii::$app->wechatServices->message->getMessage());
+                return ExecuteHelper::map($class, 'run', Yii::$app->wechatService->message->getMessage());
                 break;
             default :
                 return false;

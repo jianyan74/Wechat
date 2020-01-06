@@ -1,5 +1,5 @@
 <?php
-namespace addons\RfWechat\common\models;
+namespace addons\Wechat\common\models;
 
 use Yii;
 use yii\behaviors\BlameableBehavior;
@@ -7,7 +7,7 @@ use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 
 /**
- * This is the model class for table "{{%wechat_rule_stat}}".
+ * This is the model class for table "{{%addon_wechat_rule_stat}}".
  *
  * @property string $id
  * @property string $rule_id 规则id
@@ -24,7 +24,7 @@ class RuleStat extends \common\models\base\BaseModel
      */
     public static function tableName()
     {
-        return '{{%wechat_rule_stat}}';
+        return '{{%addon_wechat_rule_stat}}';
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace addons\RfWechat;
+namespace addons\Wechat;
 
 use Yii;
 use yii\db\Migration;
@@ -10,8 +10,7 @@ use common\interfaces\AddonWidget;
  * 升级数据库
  *
  * Class Upgrade
- * @package addons\RfWechat
- */
+ * @package addons\Wechat */
 class Upgrade extends Migration implements AddonWidget
 {
     /**

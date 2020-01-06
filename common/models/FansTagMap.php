@@ -1,11 +1,11 @@
 <?php
-namespace addons\RfWechat\common\models;
+namespace addons\Wechat\common\models;
 
 use Yii;
 use common\behaviors\MerchantBehavior;
 
 /**
- * This is the model class for table "{{%wechat_fans_tag_map}}".
+ * This is the model class for table "{{%addon_wechat_fans_tag_map}}".
  *
  * @property string $id
  * @property string $fans_id 粉丝id
@@ -20,7 +20,7 @@ class FansTagMap extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return '{{%wechat_fans_tag_map}}';
+        return '{{%addon_wechat_fans_tag_map}}';
     }
 
     /**

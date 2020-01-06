@@ -1,6 +1,6 @@
 <?php
 
-namespace addons\RfWechat\services;
+namespace addons\Wechat\services;
 
 use Yii;
 use yii\helpers\Json;
@@ -8,11 +8,11 @@ use common\enums\WechatEnum;
 use common\components\Service;
 use common\enums\StatusEnum;
 use common\helpers\Html;
-use addons\RfWechat\common\models\MsgHistory;
+use addons\Wechat\common\models\MsgHistory;
 
 /**
  * Class MsgHistoryService
- * @package addons\RfWechat\services
+ * @package addons\Wechat\services
  * @author jianyan74 <751393839@qq.com>
  */
 class MsgHistoryService extends Service
@@ -27,7 +27,7 @@ class MsgHistoryService extends Service
      */
     public function save($data, $message)
     {
-        $setting = Yii::$app->wechatServices->setting->getByFieldName('history');
+        $setting = Yii::$app->wechatService->setting->getByFieldName('history');
         // 记录历史
         if (!isset($setting['history_status']) || $setting['history_status'] == StatusEnum::ENABLED) {
             $msgHistory = new MsgHistory();
@@ -39,11 +39,11 @@ class MsgHistoryService extends Service
         // 统计记录
         if (!isset($setting['utilization_status']) || $setting['utilization_status'] == StatusEnum::ENABLED) {
             // 插入规则统计
-            !empty($data['rule_id']) && Yii::$app->wechatServices->ruleStat->set($data['rule_id']);
+            !empty($data['rule_id']) && Yii::$app->wechatService->ruleStat->set($data['rule_id']);
 
             // 插入关键字统计
             if (!empty($data['keyword_id']) && !empty($data['rule_id'])) {
-                Yii::$app->wechatServices->ruleKeywordStat->set($data['rule_id'], $data['keyword_id']);
+                Yii::$app->wechatService->ruleKeywordStat->set($data['rule_id'], $data['keyword_id']);
             }
         }
 

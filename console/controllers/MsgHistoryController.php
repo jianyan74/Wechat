@@ -1,11 +1,11 @@
 <?php
 
-namespace addons\RfWechat\console\controllers;
+namespace addons\Wechat\console\controllers;
 
 use Yii;
 use yii\console\Controller;
 use yii\helpers\Json;
-use addons\RfWechat\common\models\MsgHistory;
+use addons\Wechat\common\models\MsgHistory;
 
 /**
  * 定时任务历史消息清理
@@ -20,7 +20,7 @@ class MsgHistoryController extends Controller
      */
     public function actionIndex()
     {
-        $models = Yii::$app->wechatServices->setting->getList();
+        $models = Yii::$app->wechatService->setting->getList();
         foreach ($models as $record) {
             if ($history = Json::decode($record['history'])) {
                 if ($history && $history['msg_history_date'] > 0) {
@@ -36,5 +36,7 @@ class MsgHistoryController extends Controller
                 }
             }
         }
+
+        $this->stdout('执行完毕');
     }
 }

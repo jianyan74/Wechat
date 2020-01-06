@@ -1,15 +1,15 @@
 <?php
 
-namespace addons\RfWechat\services;
+namespace addons\Wechat\services;
 
 use Yii;
 use common\helpers\ArrayHelper;
 use common\components\Service;
-use addons\RfWechat\common\models\Fans;
+use addons\Wechat\common\models\Fans;
 
 /**
  * Class FansService
- * @package addons\RfWechat\services
+ * @package addons\Wechat\services
  * @author jianyan74 <751393839@qq.com>
  */
 class FansService extends Service
@@ -31,7 +31,7 @@ class FansService extends Service
         $fans->follow = Fans::FOLLOW_ON;
         $fans->save();
 
-        Yii::$app->wechatServices->fansStat->upFollowNum();
+        Yii::$app->wechatService->fansStat->upFollowNum();
     }
 
     /**
@@ -46,7 +46,7 @@ class FansService extends Service
             $fans->unfollowtime = time();
             $fans->save();
 
-            Yii::$app->wechatServices->fansStat->upUnFollowNum();
+            Yii::$app->wechatService->fansStat->upUnFollowNum();
         }
     }
 
@@ -76,7 +76,7 @@ class FansService extends Service
                 $labelData[] = [$fans->id, $tag, Yii::$app->services->merchant->getId()];
             }
 
-            Yii::$app->wechatServices->fansTagMap->add($fans->id, $labelData);
+            Yii::$app->wechatService->fansTagMap->add($fans->id, $labelData);
         }
     }
 
@@ -103,7 +103,7 @@ class FansService extends Service
         for ($i = 0; $i < $total_page; $i++) {
             $fans = array_slice($fans_list['data']['openid'], $i * 500, 500);
             // 系统内的粉丝
-            $system_fans = Yii::$app->wechatServices->fans->getListByOpenids($fans);
+            $system_fans = Yii::$app->wechatService->fans->getListByOpenids($fans);
             $new_system_fans = ArrayHelper::arrayKey($system_fans, 'openid');
 
             $add_fans = [];

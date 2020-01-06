@@ -1,11 +1,11 @@
 <?php
-namespace addons\RfWechat\common\models;
+namespace addons\Wechat\common\models;
 
 use Yii;
 use common\behaviors\MerchantBehavior;
 
 /**
- * This is the model class for table "{{%wechat_rule}}".
+ * This is the model class for table "{{%addon_wechat_rule}}".
  *
  * @property string $id
  * @property string $name 规则名称
@@ -55,7 +55,7 @@ class Rule extends \common\models\base\BaseModel
      */
     public static function tableName()
     {
-        return '{{%wechat_rule}}';
+        return '{{%addon_wechat_rule}}';
     }
 
     /**
